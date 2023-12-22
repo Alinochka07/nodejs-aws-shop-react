@@ -1,19 +1,19 @@
 import React from "react";
-import { Order, OrderItem } from "~/models/Order";
+import { Order, OrderItem } from "../../../models/Order";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import PaperLayout from "~/components/PaperLayout/PaperLayout";
+import PaperLayout from "../../../components/PaperLayout/PaperLayout";
 import Typography from "@mui/material/Typography";
-import API_PATHS from "~/constants/apiPaths";
-import { CartItem } from "~/models/CartItem";
-import { AvailableProduct } from "~/models/Product";
-import ReviewOrder from "~/components/pages/PageCart/components/ReviewOrder";
-import { OrderStatus, ORDER_STATUS_FLOW } from "~/constants/order";
+import API_PATHS from "../../../constants/apiPaths";
+import { CartItem } from "../../../models/CartItem";
+import { AvailableProduct } from "../../../models/Product";
+import ReviewOrder from "../../../components/pages/PageCart/components/ReviewOrder";
+import { OrderStatus, ORDER_STATUS_FLOW } from "../../../constants/order";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Field, Form, Formik, FormikProps } from "formik";
 import Grid from "@mui/material/Grid";
-import TextField from "~/components/Form/TextField";
+import TextField from "../../../components/Form/TextField";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
@@ -22,7 +22,10 @@ import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 import Box from "@mui/material/Box";
 import { useQueries } from "react-query";
-import { useInvalidateOrder, useUpdateOrderStatus } from "~/queries/orders";
+import {
+  useInvalidateOrder,
+  useUpdateOrderStatus,
+} from "../../../queries/orders";
 
 type FormValues = {
   status: OrderStatus;

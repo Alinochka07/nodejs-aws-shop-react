@@ -1,17 +1,20 @@
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import { AvailableProduct, AvailableProductSchema } from "~/models/Product";
+import {
+  AvailableProduct,
+  AvailableProductSchema,
+} from "../../../models/Product";
 import { Formik, Field, FormikProps, Form } from "formik";
-import TextField from "~/components/Form/TextField";
+import TextField from "../../../components/Form/TextField";
 import { useNavigate, useParams } from "react-router-dom";
-import PaperLayout from "~/components/PaperLayout/PaperLayout";
+import PaperLayout from "../../../components/PaperLayout/PaperLayout";
 import Typography from "@mui/material/Typography";
 import {
   useAvailableProduct,
   useInvalidateAvailableProducts,
   useRemoveProductCache,
   useUpsertAvailableProduct,
-} from "~/queries/products";
+} from "../../../queries/products";
 
 const initialValues: AvailableProduct = AvailableProductSchema.cast({});
 

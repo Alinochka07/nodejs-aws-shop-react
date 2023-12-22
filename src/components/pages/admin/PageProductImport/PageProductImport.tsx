@@ -1,6 +1,6 @@
-import API_PATHS from "~/constants/apiPaths";
-import ProductsTable from "~/components/pages/admin/PageProductImport/components/ProductsTable";
-import CSVFileImport from "~/components/pages/admin/PageProductImport/components/CSVFileImport";
+import API_PATHS from "../../../../constants/apiPaths";
+import ProductsTable from "../../../../components/pages/admin/PageProductImport/components/ProductsTable";
+import CSVFileImport from "../../../../components/pages/admin/PageProductImport/components/CSVFileImport";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";

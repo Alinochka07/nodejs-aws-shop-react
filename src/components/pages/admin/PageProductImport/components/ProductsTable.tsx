@@ -7,12 +7,12 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
-import { formatAsPrice } from "~/utils/utils";
+import { formatAsPrice } from "../../../../../utils/utils";
 import {
   useAvailableProducts,
   useDeleteAvailableProduct,
   useInvalidateAvailableProducts,
-} from "~/queries/products";
+} from "../../../../../queries/products";
 
 export default function ProductsTable() {
   const { data = [] } = useAvailableProducts();

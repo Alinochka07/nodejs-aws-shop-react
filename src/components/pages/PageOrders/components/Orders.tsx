@@ -11,7 +11,7 @@ import {
   useDeleteOrder,
   useInvalidateOrders,
   useOrders,
-} from "~/queries/orders";
+} from "../../../../queries/orders";
 
 export default function Orders() {
   const { data } = useOrders();

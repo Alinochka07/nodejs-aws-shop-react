@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import Cart from "~/components/MainLayout/components/Cart";
+import Cart from "../../../components/MainLayout/components/Cart";
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@mui/material/Link";
 
