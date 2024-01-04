@@ -7,6 +7,7 @@ import PageProductImport from "../../components/pages/admin/PageProductImport/Pa
 import PageCart from "../../components/pages/PageCart/PageCart";
 import PageProducts from "../../components/pages/PageProducts/PageProducts";
 import { Typography } from "@mui/material";
+import React from "react";
 
 function App() {
   return (

@@ -5,6 +5,7 @@ import Add from "@mui/icons-material/Add";
 import Remove from "@mui/icons-material/Remove";
 import IconButton from "@mui/material/IconButton";
 import { useCart, useInvalidateCart, useUpsertCart } from "../../queries/cart";
+import React from "react";
 
 type AddProductToCartProps = {
   product: Product;
@@ -31,6 +32,7 @@ export default function AddProductToCart({ product }: AddProductToCartProps) {
       );
     }
   };
+  console.log(data);
 
   return cartItem ? (
     <>

@@ -1,15 +1,17 @@
-import { APIGatewayProxyResult } from "aws-lambda";
+#!/usr/bin/env node
+import * as cdk from "aws-cdk-lib";
+import { StaticSite } from "./static-site";
 
-exports.handler = async (): Promise<APIGatewayProxyResult> => {
-  const products = [
-    { id: 1, name: "Product 1", price: 20.99 },
-    { id: 2, name: "Product 2", price: 15.49 },
-  ];
+class MyStaticSiteStack extends cdk.Stack {
+  constructor(parent: cdk.App, name: string) {
+    super(parent, name);
 
-  const response: APIGatewayProxyResult = {
-    statusCode: 200,
-    body: JSON.stringify(products),
-  };
+    new StaticSite(this, "AWSReactShop");
+  }
+}
 
-  return response;
-};
+const app = new cdk.App();
+
+new MyStaticSiteStack(app, "MyAWSReactShop");
+
+app.synth();

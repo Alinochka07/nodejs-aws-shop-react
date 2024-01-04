@@ -13,8 +13,8 @@ export class StaticSite extends Construct {
 
     const cloudfrontOAI = new cloudfront.OriginAccessIdentity(this, "JSCC-OAI");
 
-    const siteBucket = new s3.Bucket(this, "AWSReactNodeShop", {
-      bucketName: "aws-react-node-shop",
+    const siteBucket = new s3.Bucket(this, "AWSReactShop", {
+      bucketName: "aws-react-shop",
       websiteIndexDocument: "index.html",
       publicReadAccess: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,

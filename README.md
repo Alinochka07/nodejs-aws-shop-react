@@ -1,10 +1,10 @@
 # React-shop-cloudfront
 
 # Link to S3 Deployment:
-http://awsreactshopapp.s3-website-us-east-1.amazonaws.com/ 
+http://aws-react-shop.s3-website-eu-west-1.amazonaws.com/ 
 
 # Link to CloudFront Deployment:
-https://d3r0ogmpdyuy7x.cloudfront.net/ 
+https://dz68fd548kmv8.cloudfront.net/
 
 
 

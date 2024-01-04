@@ -27,8 +27,8 @@ var StaticSite = /** @class */ (function (_super) {
     function StaticSite(parent, name) {
         var _this = _super.call(this, parent, name) || this;
         var cloudfrontOAI = new cloudfront.OriginAccessIdentity(_this, "JSCC-OAI");
-        var siteBucket = new s3.Bucket(_this, "AWSReactNodeShop", {
-            bucketName: "aws-react-node-shop",
+        var siteBucket = new s3.Bucket(_this, "AWSReactShop", {
+            bucketName: "aws-react-shop",
             websiteIndexDocument: "index.html",
             publicReadAccess: false,
             blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
