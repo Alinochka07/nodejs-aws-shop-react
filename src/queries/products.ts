@@ -10,7 +10,6 @@ export function useAvailableProducts() {
     async () => {
       const res = await fetch(`${API_PATHS.product}`);
       const result = res.json();
-      console.log(result);
       return result;
     }
   );

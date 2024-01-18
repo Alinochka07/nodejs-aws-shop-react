@@ -32,7 +32,6 @@ export default function AddProductToCart({ product }: AddProductToCartProps) {
       );
     }
   };
-  console.log(data);
 
   return cartItem ? (
     <>

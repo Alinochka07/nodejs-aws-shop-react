@@ -6,6 +6,8 @@ import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as iam from "aws-cdk-lib/aws-iam";
 import { Stack } from "aws-cdk-lib";
 import { Construct } from "constructs";
+import * as lambda from "aws-cdk-lib/aws-lambda";
+import * as apigateway from "aws-cdk-lib/aws-apigateway";
 
 export class StaticSite extends Construct {
   constructor(parent: Stack, name: string) {
@@ -59,5 +61,32 @@ export class StaticSite extends Construct {
       distribution,
       distributionPaths: ["/*"],
     });
+
+    const importProductsFileLambda = new lambda.Function(
+      this,
+      "importProductsFileLambda",
+      {
+        runtime: lambda.Runtime.NODEJS_18_X,
+        handler: "handler.handler",
+        code: lambda.Code.fromAsset("../../aws-shop-be/import-service"),
+        environment: {
+          BUCKET_NAME: siteBucket.bucketName,
+        },
+      }
+    );
+
+    siteBucket.grantReadWrite(importProductsFileLambda);
+
+    const api = new apigateway.RestApi(
+      this,
+      "https://elj0i8p9z5.execute-api.eu-west-1.amazonaws.com/dev/import"
+    );
+
+    const lambdaIntegration = new apigateway.LambdaIntegration(
+      importProductsFileLambda
+    );
+
+    const importResource = api.root.addResource("import");
+    importResource.addMethod("GET", lambdaIntegration);
   }
 }

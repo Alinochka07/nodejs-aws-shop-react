@@ -1,6 +1,6 @@
 import { rest } from "msw";
 import API_PATHS from "../constants/apiPaths";
-import { availableProducts, orders, products, cart } from "../mocks/data";
+import { availableProducts, orders, products, cart } from "./data";
 
 export const handlers = [
   rest.get(`${API_PATHS.bff}/product`, () => {
